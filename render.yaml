@@ -3,6 +3,9 @@ services:
     name: trfc-uniform-hub
     runtime: python
     plan: free
+    region: frankfurt
+    repo: https://github.com/SLutumba/trfc_uniform_scheduler
+    branch: main
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips '*'
     healthCheckPath: /api/health
@@ -10,8 +13,19 @@ services:
       - key: APP_ENV
         value: production
       - key: DATABASE_URL
-        sync: false
+        fromDatabase:
+          name: trfc-uniform-db
+          property: connectionString
       - key: SETUP_KEY
         generateValue: true
       - key: ATTENDANCE_SIGNING_KEY
         generateValue: true
+
+# Free testing deployment: this database expires 30 days after creation.
+# Use synthetic test data. Upgrade or export before expiry if retaining data.
+databases:
+  - name: trfc-uniform-db
+    plan: free
+    region: frankfurt
+    postgresMajorVersion: "17"
+    ipAllowList: []

@@ -22,6 +22,13 @@ from sqlalchemy.exc import IntegrityError
 
 ROOT=Path(__file__).parent
 URL=os.getenv('DATABASE_URL', 'sqlite:///'+str(ROOT/'local.db'))
+if os.getenv('APP_ENV')=='production':
+ if not URL.startswith(('postgres://','postgresql://','postgresql+psycopg://')):
+  raise RuntimeError('Production requires a PostgreSQL DATABASE_URL; local SQLite storage is not durable on Render.')
+ for secret_name in ('SETUP_KEY','ATTENDANCE_SIGNING_KEY'):
+  secret_value=os.getenv(secret_name,'')
+  if len(secret_value)<32 or secret_value.startswith('replace-with'):
+   raise RuntimeError(f'Production requires a strong {secret_name} of at least 32 characters.')
 if URL.startswith('postgres://'): URL='postgresql+psycopg://'+URL[len('postgres://'):]
 elif URL.startswith('postgresql://'): URL='postgresql+psycopg://'+URL[len('postgresql://'):]
 engine=create_engine(URL, pool_pre_ping=True, connect_args={'check_same_thread':False} if URL.startswith('sqlite:') else {})

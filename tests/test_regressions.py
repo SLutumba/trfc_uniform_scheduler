@@ -1,12 +1,33 @@
 """Regression coverage for defects found during the 30 October review."""
 import csv
 import io
+import runpy
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
 import pytest
 
 from test_app import env, setup
+
+
+def test_production_rejects_ephemeral_database(env, monkeypatch, tmp_path):
+    mod, _ = env
+    database = tmp_path / 'must-not-be-created.db'
+    monkeypatch.setenv('APP_ENV', 'production')
+    monkeypatch.setenv('DATABASE_URL', 'sqlite:///' + str(database))
+    with pytest.raises(RuntimeError, match='PostgreSQL DATABASE_URL'):
+        runpy.run_path(mod.__file__)
+    assert not database.exists()
+
+
+def test_production_requires_separate_strong_secrets(env, monkeypatch):
+    mod, _ = env
+    monkeypatch.setenv('APP_ENV', 'production')
+    monkeypatch.setenv('DATABASE_URL', 'postgresql://unreachable.invalid/trfc')
+    monkeypatch.setenv('SETUP_KEY', 'x' * 48)
+    monkeypatch.delenv('ATTENDANCE_SIGNING_KEY', raising=False)
+    with pytest.raises(RuntimeError, match='strong ATTENDANCE_SIGNING_KEY'):
+        runpy.run_path(mod.__file__)
 
 
 def protocol(client):
