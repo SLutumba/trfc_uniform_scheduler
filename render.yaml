@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: trfc-uniform-hub
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips '*'
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: SETUP_KEY
+        generateValue: true
+      - key: ATTENDANCE_SIGNING_KEY
+        generateValue: true

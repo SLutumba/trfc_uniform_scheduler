@@ -1,0 +1,286 @@
+{
+  "palette": {
+    "suits": [
+      {
+        "id": "s-black",
+        "name": "Black",
+        "hex": "#191b1e",
+        "confirmed": true
+      },
+      {
+        "id": "s-navy",
+        "name": "Navy Blue",
+        "hex": "#1e385b",
+        "confirmed": true
+      },
+      {
+        "id": "s-light",
+        "name": "Light Blue",
+        "hex": "#9bc8eb",
+        "confirmed": true
+      },
+      {
+        "id": "s-charcoal",
+        "name": "Charcoal Grey",
+        "hex": "#4c5259",
+        "confirmed": true
+      }
+    ],
+    "shirts": [
+      {
+        "id": "h-white",
+        "name": "White",
+        "hex": "#fafafa",
+        "confirmed": true
+      },
+      {
+        "id": "h-black",
+        "name": "Black",
+        "hex": "#191b1e",
+        "confirmed": true
+      },
+      {
+        "id": "h-light",
+        "name": "Light Blue",
+        "hex": "#b2d6f1",
+        "confirmed": true
+      },
+      {
+        "id": "h-peach",
+        "name": "Peach",
+        "hex": "#eab6a1",
+        "confirmed": true
+      }
+    ],
+    "ties": [
+      {
+        "id": "t-black",
+        "name": "Black",
+        "hex": "#191b1e",
+        "confirmed": true
+      },
+      {
+        "id": "t-maroon",
+        "name": "Maroon",
+        "hex": "#772d47",
+        "confirmed": true
+      },
+      {
+        "id": "t-navy",
+        "name": "Navy Blue",
+        "hex": "#1e385b",
+        "confirmed": true
+      },
+      {
+        "id": "t-red",
+        "name": "Plain Red",
+        "hex": "#bd3037",
+        "confirmed": true
+      },
+      {
+        "id": "t-blackwhite",
+        "name": "Black with White Print",
+        "hex": "#343638",
+        "confirmed": false
+      },
+      {
+        "id": "t-peachnavy",
+        "name": "Peach & Navy Print",
+        "hex": "#d7a698",
+        "confirmed": false
+      }
+    ]
+  },
+  "outfits": [
+    {
+      "id": "c-1",
+      "suitId": "s-black",
+      "shirtId": "h-white",
+      "tieId": "t-black",
+      "specialOnly": false
+    },
+    {
+      "id": "c-2",
+      "suitId": "s-black",
+      "shirtId": "h-white",
+      "tieId": "t-maroon",
+      "specialOnly": false
+    },
+    {
+      "id": "c-3",
+      "suitId": "s-black",
+      "shirtId": "h-white",
+      "tieId": "t-navy",
+      "specialOnly": false
+    },
+    {
+      "id": "c-4",
+      "suitId": "s-black",
+      "shirtId": "h-white",
+      "tieId": "t-red",
+      "specialOnly": false
+    },
+    {
+      "id": "c-5",
+      "suitId": "s-black",
+      "shirtId": "h-light",
+      "tieId": "t-black",
+      "specialOnly": false
+    },
+    {
+      "id": "c-6",
+      "suitId": "s-black",
+      "shirtId": "h-light",
+      "tieId": "t-maroon",
+      "specialOnly": false
+    },
+    {
+      "id": "c-7",
+      "suitId": "s-black",
+      "shirtId": "h-light",
+      "tieId": "t-navy",
+      "specialOnly": false
+    },
+    {
+      "id": "c-8",
+      "suitId": "s-black",
+      "shirtId": "h-black",
+      "tieId": "t-black",
+      "specialOnly": true
+    },
+    {
+      "id": "c-9",
+      "suitId": "s-navy",
+      "shirtId": "h-white",
+      "tieId": "t-navy",
+      "specialOnly": false
+    },
+    {
+      "id": "c-10",
+      "suitId": "s-navy",
+      "shirtId": "h-white",
+      "tieId": "t-maroon",
+      "specialOnly": false
+    },
+    {
+      "id": "c-11",
+      "suitId": "s-navy",
+      "shirtId": "h-white",
+      "tieId": "t-red",
+      "specialOnly": false
+    },
+    {
+      "id": "c-12",
+      "suitId": "s-navy",
+      "shirtId": "h-light",
+      "tieId": "t-navy",
+      "specialOnly": false
+    },
+    {
+      "id": "c-13",
+      "suitId": "s-navy",
+      "shirtId": "h-light",
+      "tieId": "t-maroon",
+      "specialOnly": false
+    },
+    {
+      "id": "c-14",
+      "suitId": "s-navy",
+      "shirtId": "h-peach",
+      "tieId": "t-navy",
+      "specialOnly": false
+    },
+    {
+      "id": "c-15",
+      "suitId": "s-charcoal",
+      "shirtId": "h-white",
+      "tieId": "t-black",
+      "specialOnly": false
+    },
+    {
+      "id": "c-16",
+      "suitId": "s-charcoal",
+      "shirtId": "h-white",
+      "tieId": "t-maroon",
+      "specialOnly": false
+    },
+    {
+      "id": "c-17",
+      "suitId": "s-charcoal",
+      "shirtId": "h-white",
+      "tieId": "t-navy",
+      "specialOnly": false
+    },
+    {
+      "id": "c-18",
+      "suitId": "s-charcoal",
+      "shirtId": "h-white",
+      "tieId": "t-red",
+      "specialOnly": false
+    },
+    {
+      "id": "c-19",
+      "suitId": "s-charcoal",
+      "shirtId": "h-light",
+      "tieId": "t-black",
+      "specialOnly": false
+    },
+    {
+      "id": "c-20",
+      "suitId": "s-charcoal",
+      "shirtId": "h-light",
+      "tieId": "t-maroon",
+      "specialOnly": false
+    },
+    {
+      "id": "c-21",
+      "suitId": "s-charcoal",
+      "shirtId": "h-light",
+      "tieId": "t-navy",
+      "specialOnly": false
+    },
+    {
+      "id": "c-22",
+      "suitId": "s-charcoal",
+      "shirtId": "h-peach",
+      "tieId": "t-navy",
+      "specialOnly": false
+    },
+    {
+      "id": "c-23",
+      "suitId": "s-light",
+      "shirtId": "h-white",
+      "tieId": "t-navy",
+      "specialOnly": false
+    },
+    {
+      "id": "c-24",
+      "suitId": "s-light",
+      "shirtId": "h-white",
+      "tieId": "t-maroon",
+      "specialOnly": false
+    },
+    {
+      "id": "c-25",
+      "suitId": "s-light",
+      "shirtId": "h-white",
+      "tieId": "t-black",
+      "specialOnly": false
+    }
+  ],
+  "rules": [
+    {
+      "id": "r-last",
+      "name": "All-black month end",
+      "kind": "last",
+      "weekday": 0,
+      "date": "",
+      "outfitId": "c-8"
+    }
+  ],
+  "settings": {
+    "startMonth": "2026-11",
+    "months": 12,
+    "includeFridays": false
+  }
+}
